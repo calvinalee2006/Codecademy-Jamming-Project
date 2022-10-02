@@ -30,7 +30,8 @@ import Playlist from '../Playlist/Playlist';
      <SearchBar /> 
     <div className="App-playlist">
        <SearchResults searchResults={this.state.searchResults} /> 
-      <Playlist /> 
+      <Playlist playlistName={this.state.playlistName}
+                playlistTracks={this.state.playListTracks}/> 
     </div>
   </div>
 </div>
