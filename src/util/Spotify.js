@@ -45,7 +45,7 @@ const Spotify = {
         }));
     });
     },
-    savePlayList(name, trackUris) {
+    savePlaylist(name, trackUris) {
         if (!name || !trackUris.length) {
             return;
         }
@@ -65,7 +65,7 @@ const Spotify = {
             }).then(response => response.json()
             ).then(jsonResponse => {
                 const playlistId = jsonResponse.id;
-                return fetch(`/v1/users/{user_id}/playlists/{playlist_id}/tracks`, {
+                return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
                     headers: headers,
                     method:'POST',
                     body: JSON.stringify({uris: trackUris})
